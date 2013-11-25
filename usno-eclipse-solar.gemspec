@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = USNO::Eclipse::Solar::VERSION
   spec.authors       = ["Ryan T. Hosford"]
   spec.email         = ["tad.hosford@gmail.com"]
-  spec.description   = %q{}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Obtain the circumstances of recent and upcoming solar eclipses for any location}
+  spec.summary       = %q{}
+  spec.homepage      = "http://ea.rthbound.com/usno"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -21,5 +21,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "pay_dirt"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "pry"
 end
