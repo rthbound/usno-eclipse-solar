@@ -9,13 +9,11 @@ module USNO
 
         def initialize(options = {})
           options = {
-            z_meters: 0,
-            days: 5,
-            lat_minutes: 0, lat_seconds: 0, long_minutes: 0, long_seconds: 0
+            z_meters:    0,
           }.merge(options)
 
 
-          load_options(:long, :lat, :date, options)
+          load_options(:long, :lat, :date, options) and validate_state
         end
 
         def call
@@ -59,6 +57,15 @@ module USNO
             xxecl=#{USNO::Eclipse::Solar::Eclipses.fetch(@date)}
             ZZZ=END
           }.join("&")
+        end
+
+        def validate_state
+          @lat.between?(-90, 90) or raise %q{
+            Latitude (lat) out of range
+          }
+          @long.between?(-180, 180) or raise %q{
+            Longitude (long) out of range
+          }
         end
       end
     end

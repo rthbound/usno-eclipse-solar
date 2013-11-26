@@ -29,7 +29,7 @@ module USNO
         end
 
         def self.formatted_date(date)
-          date.strftime("%Y%-m%-d")
+          date.kind_of?(String) ? date : date.strftime("%Y%-m%-d")
         end
 
         # As reminders

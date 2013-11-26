@@ -16,10 +16,8 @@ module USNO
         def form_options(options)
           options = {
             request_class: USNO::Eclipse::Solar::WorldWideRequest,
-            z_meters:      0,
-
-            # Default to date when much of the world will experience an eclipse
-            date: Time.new(2017, 8, 21)
+            z_meters:      0,           # Default: sea level
+            date: Time.new(2017, 8, 21) # Default: 2017 total eclipse
           }.merge(options)
 
           options.merge!({
@@ -30,7 +28,10 @@ module USNO
         end
 
         def validate_state
-          # @z_meters.between?(-90, 10999) # Documented by USNO, but won't fail
+          @z_meters.between?(-90, 10999) or raise %q{
+            Elevation (z_meters) out of range
+          } # Documented by USNO, but won't fail
+
           (@city && @state) || (@lat && @long) or raise %q{
             Location required.
           }
