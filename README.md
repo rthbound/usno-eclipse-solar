@@ -1,6 +1,6 @@
-# USNO::Eclipse::Solar
+# USNO::Eclipse::Solar [![Code Climate](https://codeclimate.com/github/rthbound/usno-eclipse-solar.png)](https://codeclimate.com/github/rthbound/usno-eclipse-solar)[![Coverage Status](https://coveralls.io/repos/rthbound/usno-eclipse-solar/badge.png?branch=master)](https://coveralls.io/r/rthbound/usno-eclipse-solar?branch=master)[![Build Status](https://travis-ci.org/rthbound/usno-eclipse-solar.png?branch=master)](https://travis-ci.org/rthbound/usno-eclipse-solar)
 
-TODO: Write a gem description
+Obtain the circumstances of recent and upcoming solar eclipses for any location
 
 ## Installation
 
